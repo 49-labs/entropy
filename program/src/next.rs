@@ -28,7 +28,9 @@ pub fn process_next(accounts: &[AccountInfo<'_>], data: &[u8]) -> ProgramResult 
     );
 
     // Update the var for the next value.
+    // TODO: hmm...
     var.commit = var.seed;
+
     var.seed = [0; 32];
     var.slot_hash = [0; 32];
     var.value = [0; 32];
